@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-    <title>My first websit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的響應式網站</title>
+    <style>
+        /* 基礎設定 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; line-height: 1.6; color: #333; background-color: #f4f7f6; }
+
+        /* 容器限制最大寬度並置中 */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* 導航欄 */
+        nav { background: #2d3436; color: white; padding: 1rem 0; text-align: center; position: sticky; top: 0; z-index: 100; }
+
+        /* 英雄區塊 (Hero Section) */
+        .hero { background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; padding: 60px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* 響應式網格系統 */
+        .features { display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0; }
+        
+        .feature-card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex: 1;          /* 讓卡片平分剩餘空間 */
+            min-width: 280px; /* 當空間小於 280px 時自動換行 */
+            text-align: center;
+        }
+
+        .feature-card h3 { color: #6c5ce7; margin-bottom: 15px; }
+
+        /* 手機版微調：當螢幕寬度小於 600px 時 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .feature-card { padding: 20px; }
+        }
+
+        footer { text-align: center; padding: 40px 0; color: #888; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-    <h1>Hello World!!</h1>
-    <p>This is my first simplest website</p>
+
+    <nav>
+        <div class="container">我的個人品牌</div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>歡迎來到我的新世界</h1>
+            <p>這是一個能在任何裝置上完美顯示的網站</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature-card">
+                <h3>靈活性</h3>
+                <p>無論是用電腦、平板還是手機，佈局都會自動調整。</p>
+            </div>
+            <div class="feature-card">
+                <h3>速度快</h3>
+                <p>簡單的代碼意味著極速的載入體驗。</p>
+            </div>
+            <div class="feature-card">
+                <h3>極簡風</h3>
+                <p>拿掉多餘的裝飾，專注在最重要的內容上。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 由 Gemini 助手協助製作
+    </footer>
+
 </body>
 </html>
